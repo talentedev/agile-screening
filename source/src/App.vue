@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Dashboard />
+    <Home />
   </div>
 </template>
 
@@ -8,12 +8,12 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import Dashboard from './components/Dashboard.vue'
+import Home from './components/Home.vue'
 
 export default {
   name: 'App',
   components: {
-    Dashboard
+    Home
   }
 }
 </script>
