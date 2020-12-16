@@ -13,7 +13,14 @@ To open server terminal
 $ docker-compose exec nodejs-server bash
 ```
 
-To populate databse in terminal
+To populate database in terminal
 ```bash
 $ node ./fixtures.js
+```
+
+To run lint an unit test
+```bash
+$ docker-compose exec vue-ui bash
+$ ./node_modules/.bin/nps lint
+$ ./node_modules/.bin/nps test
 ```

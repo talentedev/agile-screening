@@ -1,13 +1,13 @@
 module.exports = {
-  "moduleFileExtensions": [
+  moduleFileExtensions: [
     "js",
     "ts",
     "json",
     "vue"
   ],
-  "transform": {
+  transform: {
     ".*\\.(vue)$": "vue-jest",
     "^.+\\.js$": "babel-jest"
   },
-  "testURL": "http://localhost/"
+  testURL: "http://localhost/"
 }
