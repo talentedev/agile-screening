@@ -42,6 +42,7 @@
     },
     "rules": {}
   },
+  "eslintIgnore": ["*.spec.js"],
   "browserslist": [
     "> 1%",
     "last 2 versions",
