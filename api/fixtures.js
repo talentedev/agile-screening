@@ -11,9 +11,9 @@ principleRepo.createTable()
 
 // populate data
 valueRepo.create('individuals and interactions over processes and tools;')
-valueRepo.create('individuals and interactions over processes and tools;')
-valueRepo.create('individuals and interactions over processes and tools;')
-valueRepo.create('individuals and interactions over processes and tools;')
+valueRepo.create('working software over comprehensive documentation;')
+valueRepo.create('customer collaboration over contract negotiation;')
+valueRepo.create('responding to change over following a plan')
 
 principleRepo.create('Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.')
 principleRepo.create('Welcome changing requirements, even late in development. Agile processes harness change for the customer’s competitive advantage.')

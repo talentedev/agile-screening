@@ -5,7 +5,7 @@ import { getAllValues, createValue, deleteValue, updateValue } from '.././servic
 describe('Values', () => {
   it('Show alert when empty value is submitted', async () => {
     const wrapper = mount(Values)
-    const textInput = wrapper.find('input[type="text"]')
+    const textInput = wrapper.find('textarea')
     const button = wrapper.find('button[type="button"]')
     await textInput.setValue('')
     await button.trigger('click')
@@ -16,6 +16,6 @@ describe('Values', () => {
     const wrapper = mount(Values)
     const button = wrapper.find('button[type="button"]')
     await button.trigger('click')
-    expect(wrapper.find('b-modal').is('b-modal')).toBe(true)
+    expect(wrapper.find('b-modal').exists()).toBe(true)
   })
 })

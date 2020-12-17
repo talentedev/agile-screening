@@ -1,19 +1,17 @@
 <template>
   <div>
-    <table class="table table-striped">
+    <table class="table table-striped table-sm">
       <tbody>
         <tr v-for="(item, index) in values" :key="index">
           <td>{{ item.info }}</td>
-          <td>
+          <td style="width:200px;">
             <button
               type="button"
               class="btn btn-primary"
               @click="showEditModal(item)">Edit</button>
-          </td>
-          <td>
             <button
               type="button"
-              class="btn btn-danger"
+              class="btn btn-danger ml-2"
               @click="deleteValue(item.id)">Delete</button>
           </td>
         </tr>
@@ -22,12 +20,12 @@
     <div v-if="error" class="alert alert-danger" role="alert">
       Please fill out.
     </div>
-    <form class="form-inline">
-      <input
-        type="text"
+    <form>
+      <textarea
+        rows="3"
         class="form-control mb-2 mr-sm-2"
         placeholder="Type here..."
-        v-model="value">
+        v-model="value"></textarea>
       <button
         type="button"
         class="btn btn-success mb-2"
@@ -43,15 +41,15 @@
           <div v-if="errorUpdate" class="alert alert-danger" role="alert">
             Please fill out.
           </div>
-          <form class="form-inline">
-            <input
-              type="text"
+          <form>
+            <textarea
+              rows="5"
               class="form-control mb-2 mr-sm-2"
               placeholder="Type here..."
-              v-model="selectedValue.info">
+              v-model="selectedValue.info"></textarea>
             <button
               type="button"
-              class="btn btn-success mb-2"
+              class="btn btn-success mb-2 float-right"
               @click="updateValue()">Submit</button>
           </form>
         </div>
@@ -80,8 +78,8 @@ export default {
   methods: {
     getAllValues() {
       getAllValues().then(response => {
-        console.log(response)
-        this.values = response
+        console.log(response);
+        this.values = response;
       })
     },
     createValue() {
@@ -91,6 +89,7 @@ export default {
         this.error = false
         createValue(this.value).then(response => {
           console.log(response);
+          this.value = '';
           this.getAllValues();
         });
       }
@@ -103,13 +102,13 @@ export default {
     },
     showEditModal(value) {
       this.$bvModal.show('update-modal')
-      this.selectedValue = value
+      this.selectedValue = {...value};
     },
     updateValue() {
       updateValue(this.selectedValue).then(response => {
         console.log(response);
         this.getAllValues();
-        this.$bvModal.hide('update-modal')
+        this.$bvModal.hide('update-modal');
       });
     }
   }

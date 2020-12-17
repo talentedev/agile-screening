@@ -4,7 +4,7 @@ import Principles from ".././components/Principles.vue"
 describe('Principles', () => {
   it('Show alert when empty principle is submitted', async () => {
     const wrapper = mount(Principles)
-    const textInput = wrapper.find('input[type="text"]')
+    const textInput = wrapper.find('textarea')
     const button = wrapper.find('button[type="button"]')
     await textInput.setValue('')
     await button.trigger('click')
@@ -15,6 +15,6 @@ describe('Principles', () => {
     const wrapper = mount(Principles)
     const button = wrapper.find('button[type="button"]')
     await button.trigger('click')
-    expect(wrapper.find('b-modal').is('b-modal')).toBe(true)
+    expect(wrapper.find('b-modal').exists()).toBe(true)
   })
 })
